@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    app:cardCornerRadius="5dp"
+    android:id="@+id/favoriteCardView"
+    >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/tv_musicName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Müzik ismi"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            android:layout_weight="3"
+
+            >
+
+            <SeekBar
+                android:id="@+id/seek_musicVolume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="15dp"
+                android:layout_weight="2"
+
+                />
+
+            <ImageView
+                android:id="@+id/iv_favorite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/favorite"
+                android:layout_gravity="bottom"
+                android:layout_margin="5dp"
+
+                />
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_play"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="5dp"
+                android:onClick="ClickPlayPause"
+
+
+                />
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

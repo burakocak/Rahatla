@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    app:cardCornerRadius="5dp"
+    android:id="@+id/categoryDetailsCardView">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/iv_musicLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_margin="17dp"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            >
+
+
+            <TextView
+                android:id="@+id/tv_detailsName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muzik Adı"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/tv_detailsBookShelf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="17dp"
+            >
+
+
+            <ImageView
+                android:id="@+id/iv_details_favorite"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:src="@drawable/favoriteadd"
+                android:layout_margin="5dp"
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
