@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.burakod.rahatla.Adapter.DetailsRecylerAdapter;
+
 public class DetailsFragment extends Fragment {
 
     RecyclerView recyclerView;

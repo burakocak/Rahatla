@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 
+import com.burakod.rahatla.Favorite;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -61,14 +62,15 @@ class FetchFavorite extends AsyncTask<Void,Void,Void> {
                     JSONObject jsonobject = jsonarray.getJSONObject(i);
                     Favorite cFavorite = new Favorite();
                     // Json Listesi String Dizilerle çekiyoruz.
-                    cFavorite.musicID = jsonobject.getString("id");
+                    cFavorite.setMusicID(jsonobject.getString("id"));
 
-                    cFavorite.musicName = jsonobject.getString("musicName");
+                    cFavorite.setMusicName(jsonobject.getString("musicName"));
+
 
                     //musicNameArray[i] = musicName;
 
                     //favorite[i] = jsonobject.getString("favorite");
-                    cFavorite.musicUrl = jsonobject.getString("mp3");
+                    cFavorite.setMusicUrl(jsonobject.getString("mp3"));
                     favoriteArrayList.add(cFavorite);
 
                 }

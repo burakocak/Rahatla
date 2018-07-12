@@ -1,4 +1,4 @@
-package com.burakod.rahatla;
+package com.burakod.rahatla.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.burakod.rahatla.Details;
+import com.burakod.rahatla.R;
 
 import java.util.ArrayList;
 
@@ -49,11 +52,23 @@ public class DetailsRecylerAdapter extends RecyclerView.Adapter<DetailsRecylerAd
             mAddFavorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    AddFavorite(objectPositionValue);
+
 
                 }
+
+
             });
 
 
+        }
+
+        private void AddFavorite(int position) {
+            mDataList.remove(position);
+
+            // notifyDataSetChanged();  iki metoda gerek kalmaz .
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position,mDataList.size());
         }
 
         public void setData(Details details ,int position){

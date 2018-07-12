@@ -30,7 +30,7 @@ public class Favorite {
     String musicName;
     String musicUrl;
 
-    Favorite(){
+    public Favorite(){
     }
 
 

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class FavoriteRecylerAdapter extends RecyclerView.Adapter<FavoriteRecylerAdapter.MyViewHolder> {
 
-    ArrayList<Favorite> mDataList;
+    public ArrayList<Favorite> mDataList;
     LayoutInflater layoutInflater;
 
     public FavoriteRecylerAdapter() {

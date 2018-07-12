@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.burakod.rahatla.Adapter.FavoriteRecylerAdapter;
 
 
+
 public class FavoriteFragment extends Fragment{
     RecyclerView recyclerView;
     View mView;
@@ -32,7 +33,7 @@ public class FavoriteFragment extends Fragment{
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        FavoriteRecylerAdapter favoriteRecylerAdapter = new FavoriteRecylerAdapter(mView.getContext(),FetchFavorite.favoriteArrayList);
+        FavoriteRecylerAdapter favoriteRecylerAdapter = new FavoriteRecylerAdapter(mView.getContext(), FetchFavorite.favoriteArrayList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(favoriteRecylerAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
