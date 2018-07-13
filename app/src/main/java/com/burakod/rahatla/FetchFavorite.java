@@ -19,7 +19,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 class FetchFavorite extends AsyncTask<Void,Void,Void> {
-
+    // Oluşturulan url ile sayfayı taramayı Favorite tipindeki araylist ile gelen bilgiyi tutuyoruz.
     String url = "http://burakocak.net/favorite.html";
     public static ArrayList<Favorite> favoriteArrayList = new ArrayList<Favorite>();
 
@@ -28,14 +28,12 @@ class FetchFavorite extends AsyncTask<Void,Void,Void> {
     protected void onPreExecute() {
 
         super.onPreExecute();
-        // ProgressDialog
-
-
 
     }
 
     @Override
     protected Void doInBackground(Void... voids) {
+       // Datayı belirli url den çek
         SaveData();
         return  null;
     }
@@ -44,18 +42,21 @@ class FetchFavorite extends AsyncTask<Void,Void,Void> {
 
         try {
             if(favoriteArrayList.isEmpty()) {
-
+                // Html dökümana erişiyoruz.
                 Document doc = Jsoup.connect(url).get();
-
+                // Html dökümanın içindeki jsonData bulup atadık.
                 Element el = doc.getElementById("jsonData");
-
+                // datayı Stringe aktar
                 String jsonStr = el.html();
 
-
+                // Alınan datayı json array olarak oluşturuyoruz.
                 JSONArray jsonarray = new JSONArray(jsonStr);
 
 
-
+                // Oluşan data boyutunundan yararlanarak
+                // istenilen ögeleri çekiyoruz.
+                // Çekilen ögelerin taglerinden yararlanarak
+                // Json data içinden verileri oluşturduğumuz Favorite klasına atıyoruz.
                 for (int i = 0; i < jsonarray.length(); i++) {
                     JSONObject jsonobject = jsonarray.getJSONObject(i);
                     Favorite cFavorite = new Favorite();

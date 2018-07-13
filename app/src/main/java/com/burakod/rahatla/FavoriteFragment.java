@@ -33,7 +33,7 @@ public class FavoriteFragment extends Fragment{
     }
 
     private void init() {
-
+        // Recyler view için bir linearlayout manager eşliğinde Adapterdan çekilen veriyi aktarıyoruz.
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         FavoriteRecylerAdapter favoriteRecylerAdapter = new FavoriteRecylerAdapter(mView.getContext(), FetchFavorite.favoriteArrayList);
@@ -46,6 +46,7 @@ public class FavoriteFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Veri çekme kanalı çalıştır.
         new FetchFavorite().execute();
         mView = inflater.inflate(R.layout.fragment_favorite,container,false);
         recyclerView = mView.findViewById(R.id.recyler_favorite);

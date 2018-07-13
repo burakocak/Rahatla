@@ -12,6 +12,9 @@ import java.io.InputStream;
 public class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
     ImageView imageView;
 
+    // Bir İmageView içersinde SetImage etmek için bir bitmap metod ile url üzerinden resim çekiliyor.
+
+
      public DownloadImageFromInternet(ImageView imageView) {
         this.imageView = imageView;
 

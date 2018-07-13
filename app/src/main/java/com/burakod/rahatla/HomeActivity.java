@@ -26,12 +26,9 @@ public class HomeActivity extends AppCompatActivity{
 
     private static final String TAG = "HomeActivity";
     private BottomNavigationView mBottomNavigationView;
-    FragmentTransaction mFragmentTransaction;
-    FragmentManager mFragmentManager;
     Fragment selectedFragment = null;
-    Random random;
     ProgressDialog progress;
-    Context context;
+
 
 
     @Override
@@ -39,13 +36,11 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Log.d(TAG,"onCreate: Starting");
-
-
-
+        // Başlangıçta Bir Yükleme çubuğu başlat
         showProgress();
         mBottomNavigationView = findViewById(R.id.NavBot);
 
-
+        // Başlangıçta ilk fragment olarak Favorite açıyoruz.
         selectedFragment = FavoriteFragment.newInstance();
         getSupportFragmentManager().beginTransaction().replace(R.id.content, selectedFragment).commit();
 
@@ -84,7 +79,7 @@ public class HomeActivity extends AppCompatActivity{
 
 
 
-
+    // Belirli bir ilerleme çubuğu progressBar
     public void showProgress() {
         progress=new ProgressDialog(this);
         progress.setMessage("Loading...");
