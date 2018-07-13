@@ -37,8 +37,6 @@ class FetchFavorite extends AsyncTask<Void,Void,Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         SaveData();
-
-
         return  null;
     }
 

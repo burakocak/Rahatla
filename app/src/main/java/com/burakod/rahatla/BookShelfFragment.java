@@ -18,7 +18,10 @@ public class BookShelfFragment extends Fragment{
     RecyclerView recyclerView;
     View mView;
 
-
+    public static BookShelfFragment newInstance() {
+        BookShelfFragment fragment = new BookShelfFragment();
+        return fragment;
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

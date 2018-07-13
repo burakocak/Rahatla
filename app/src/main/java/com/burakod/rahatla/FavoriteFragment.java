@@ -18,9 +18,12 @@ import com.burakod.rahatla.Adapter.FavoriteRecylerAdapter;
 public class FavoriteFragment extends Fragment{
     RecyclerView recyclerView;
     View mView;
+    private static final String TAG = "FavoriteFragment";
 
-
-
+    public static FavoriteFragment newInstance() {
+        FavoriteFragment fragment = new FavoriteFragment();
+        return fragment;
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

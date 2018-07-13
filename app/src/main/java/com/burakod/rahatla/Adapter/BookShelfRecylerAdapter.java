@@ -18,6 +18,7 @@ import com.burakod.rahatla.BookShelf;
 import com.burakod.rahatla.DetailsFragment;
 import com.burakod.rahatla.DownloadImageFromInternet;
 import com.burakod.rahatla.FetchDetails;
+import com.burakod.rahatla.HomeActivity;
 import com.burakod.rahatla.R;
 
 import java.util.ArrayList;
@@ -72,11 +73,13 @@ public class BookShelfRecylerAdapter extends RecyclerView.Adapter<BookShelfRecyl
                     String bookShelfName = mDataList.get(objectPositionValue).getBookShelfName();
 
                     String url = "http://burakocak.net/bookshelf/"+bookShelfName+".html";
-                    FetchDetails.url = url;
+                    FetchDetails.url =url;
                     AppCompatActivity activity = (AppCompatActivity) view.getContext();
                     Fragment myFragment = new DetailsFragment();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.content, myFragment).addToBackStack(null).commit();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.content, myFragment).addToBackStack(null).commit();
+                    ((HomeActivity)activity).showProgress();
+
+
 
                 }
             });

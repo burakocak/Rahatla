@@ -14,12 +14,6 @@ import java.util.ArrayList;
 
 public class FetchDetails extends AsyncTask<Void,Void,Void> {
 
-
-
-    public FetchDetails() {
-    }
-
-
     public String getUrl() {
         return url;
     }
@@ -28,7 +22,13 @@ public class FetchDetails extends AsyncTask<Void,Void,Void> {
         this.url = url;
     }
 
-    public static String url = "";
+    public static String url;
+
+    public FetchDetails() {
+    }
+
+
+
     public static ArrayList<Details> detailsArrayList = new ArrayList<Details>();
 
 
@@ -41,6 +41,7 @@ public class FetchDetails extends AsyncTask<Void,Void,Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         SaveData();
+        url = null;
         return null;
     }
 
@@ -48,9 +49,10 @@ public class FetchDetails extends AsyncTask<Void,Void,Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
+        detailsArrayList.clear();
     }
 
-    private void SaveData() {
+    public void SaveData() {
 
         if(detailsArrayList.isEmpty()){
 
