@@ -2,24 +2,14 @@ package com.burakod.rahatla;
 
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-import java.util.Random;
 
 
 public class HomeActivity extends AppCompatActivity{
@@ -36,15 +26,9 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Log.d(TAG,"onCreate: Starting");
-        // Başlangıçta Bir Yükleme çubuğu başlat
-        showProgress();
+
+
         mBottomNavigationView = findViewById(R.id.NavBot);
-
-        // Başlangıçta ilk fragment olarak Favorite açıyoruz.
-        selectedFragment = FavoriteFragment.newInstance();
-        getSupportFragmentManager().beginTransaction().replace(R.id.content, selectedFragment).commit();
-
-
 
         mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -55,20 +39,24 @@ public class HomeActivity extends AppCompatActivity{
 
                         showProgress();
                         selectedFragment = FavoriteFragment.newInstance();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content, selectedFragment).commit();
-
-                        return true;
+                        break;
                     case R.id.icon_bookshelf:
 
                         showProgress();
                         selectedFragment = BookShelfFragment.newInstance();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content, selectedFragment).commit();
-
-                        return true;
+                        break;
                 }
-                return false;
+                getSupportFragmentManager().beginTransaction().replace(R.id.content, selectedFragment).addToBackStack(null).commit();
+                return true;
             }
         });
+        // Başlangıçta Bir Yükleme çubuğu ile ilk Fragmenta başlatıyoruz.
+        showProgress();
+        selectedFragment = FavoriteFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, selectedFragment).addToBackStack(null).commit();
+
+        //selectedFragment = FavoriteFragment.newInstance();
+        //getSupportFragmentManager().beginTransaction().replace(R.id.content, FavoriteFragment.newInstance()).commit();
 
 
 

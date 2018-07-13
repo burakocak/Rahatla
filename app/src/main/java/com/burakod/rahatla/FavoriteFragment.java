@@ -28,15 +28,17 @@ public class FavoriteFragment extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        this.mView = view;
+        new FetchFavorite().execute();
         init();
     }
 
     private void init() {
         // Recyler view için bir linearlayout manager eşliğinde Adapterdan çekilen veriyi aktarıyoruz.
+        new FetchFavorite().execute();
+        recyclerView = mView.findViewById(R.id.recyler_favorite);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        FavoriteRecylerAdapter favoriteRecylerAdapter = new FavoriteRecylerAdapter(mView.getContext(), FetchFavorite.favoriteArrayList);
+        FavoriteRecylerAdapter favoriteRecylerAdapter = new FavoriteRecylerAdapter(mView.getContext(),FetchFavorite.favoriteArrayList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(favoriteRecylerAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -46,10 +48,7 @@ public class FavoriteFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Veri çekme kanalı çalıştır.
-        new FetchFavorite().execute();
         mView = inflater.inflate(R.layout.fragment_favorite,container,false);
-        recyclerView = mView.findViewById(R.id.recyler_favorite);
-        return  mView;
+        return mView;
     }
 }

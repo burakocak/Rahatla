@@ -22,7 +22,7 @@ public class FetchBookShelf extends AsyncTask<Void,Void,Void> {
     protected void onPreExecute() {
 
         super.onPreExecute();
-        // ProgressDialog
+
     }
 
     @Override
@@ -63,7 +63,6 @@ public class FetchBookShelf extends AsyncTask<Void,Void,Void> {
 
     @Override
     protected void onPostExecute(Void aVoid) {
-
 
     }
 }

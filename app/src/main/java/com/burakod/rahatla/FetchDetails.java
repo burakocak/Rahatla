@@ -35,11 +35,14 @@ public class FetchDetails extends AsyncTask<Void,Void,Void> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+        detailsArrayList.clear();
+
     }
 
 
     @Override
     protected Void doInBackground(Void... voids) {
+
         SaveData();
         url = null;
         return null;
@@ -49,7 +52,7 @@ public class FetchDetails extends AsyncTask<Void,Void,Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        detailsArrayList.clear();
+
     }
 
     public void SaveData() {
