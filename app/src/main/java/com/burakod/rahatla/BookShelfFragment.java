@@ -26,14 +26,12 @@ public class BookShelfFragment extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        new FetchBookShelf().execute();
         recyclerView = mView.findViewById(R.id.recyler_bookshelf);
         this.mView = view;
         init();
     }
 
     private void init() {
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         BookShelfRecylerAdapter bookShelfRecylerAdapter = new BookShelfRecylerAdapter(mView.getContext(),FetchBookShelf.bookShelfArrayList);
@@ -45,7 +43,6 @@ public class BookShelfFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        new FetchBookShelf().execute();
         mView = inflater.inflate(R.layout.fragment_bookshelf,container,false);
         return  mView;
 

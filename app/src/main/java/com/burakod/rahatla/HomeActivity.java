@@ -36,7 +36,6 @@ public class HomeActivity extends AppCompatActivity{
 
                 switch (item.getItemId()){
                     case R.id.icon_favorite :
-
                         showProgress();
                         selectedFragment = FavoriteFragment.newInstance();
                         break;
@@ -58,14 +57,7 @@ public class HomeActivity extends AppCompatActivity{
         //selectedFragment = FavoriteFragment.newInstance();
         //getSupportFragmentManager().beginTransaction().replace(R.id.content, FavoriteFragment.newInstance()).commit();
 
-
-
-
-
-
     }
-
-
 
     // Belirli bir ilerleme çubuğu progressBar
     public void showProgress() {

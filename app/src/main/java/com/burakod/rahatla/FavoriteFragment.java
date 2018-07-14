@@ -28,13 +28,11 @@ public class FavoriteFragment extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        new FetchFavorite().execute();
         init();
     }
 
     private void init() {
         // Recyler view için bir linearlayout manager eşliğinde Adapterdan çekilen veriyi aktarıyoruz.
-        new FetchFavorite().execute();
         recyclerView = mView.findViewById(R.id.recyler_favorite);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

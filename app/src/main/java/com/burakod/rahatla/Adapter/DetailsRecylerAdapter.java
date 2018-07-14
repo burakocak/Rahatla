@@ -1,5 +1,6 @@
 package com.burakod.rahatla.Adapter;
 
+
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 
 import com.burakod.rahatla.Details;
+import com.burakod.rahatla.Favorite;
 import com.burakod.rahatla.R;
 
 import java.util.ArrayList;
@@ -48,7 +50,6 @@ public class DetailsRecylerAdapter extends RecyclerView.Adapter<DetailsRecylerAd
             mBookShelfName = itemView.findViewById(R.id.tv_detailsBookShelf);
             mMusicLogo = itemView.findViewById(R.id.iv_musicLogo);
             mAddFavorite = itemView.findViewById(R.id.iv_details_favorite);
-
             mAddFavorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -63,8 +64,12 @@ public class DetailsRecylerAdapter extends RecyclerView.Adapter<DetailsRecylerAd
 
         }
 
+
         private void AddFavorite(int position) {
+
+
             mDataList.remove(position);
+            mAddFavorite.setImageResource(R.drawable.favorite);
 
             // notifyDataSetChanged();  iki metoda gerek kalmaz .
             notifyItemRemoved(position);
